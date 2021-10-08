@@ -1,0 +1,104 @@
+@import 'normolize.scss';
+
+// === Mixins ===
+
+@mixin font_Sintony{
+    font-family: 'Sintony', sans-serif;
+}
+
+@mixin font_Source_Sans_Pro{
+    font-family: 'Source Sans Pro', sans-serif;
+}
+// === / Mixins ===
+
+// === Variables ===
+$color_white: #ffffff;
+// === / Variables ===
+
+// === Common ===
+body {
+    @include font_Sintony;
+    @include font_Source_Sans_Pro;
+}
+// === / Common ===
+
+.back_ground{
+
+    &_header {
+
+        color: $color_white;
+        background: linear-gradient(0deg, #6F86D6 0%, #48C6EF 100%);
+        background-size: cover;
+        position: relative;
+        height: 100vh;
+        z-index: 10;
+        &before {
+
+            content: '';
+            position: absolute;
+            z-index: 5;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+
+            background-color:  rgba(216, 216, 216, 1);
+
+        }
+    }
+    
+    .container{
+
+        // === header ===
+        .section_header {
+            color: $color_white;
+            position: relative;
+    
+            .section_inner{
+                //height: 100vh;
+                //position: relative;
+                display: flex;
+                //flex-direction: row;
+            }
+            
+            &_logo {
+                font-weight: normal;
+                font-size: 27px;
+                flex-shrink: 1;
+            }
+    
+            &_menu {
+                flex-grow: 1;
+                display: flex;
+                align-items: center;
+            }
+    
+            &_wrapper {
+                display: flex;
+                font-size: 24px;
+                &__products{}
+                &__services{}
+                &__features{}
+                &__plans{}
+                &__sign_in{}
+                &__signup_button{}
+            }
+            
+        }
+        // === / header ===
+    
+        .section_Hero{
+            color: $color_white;
+            position: relative;
+    
+            &_wrapper{
+                display: flex;
+                flex-direction: column;
+            }
+    
+        }
+    }
+    
+}
+
+
