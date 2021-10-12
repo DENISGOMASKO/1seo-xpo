@@ -1,104 +1,146 @@
-@import 'normolize.scss';
+@import "normolize.scss";
 
 // === Mixins ===
 
-@mixin font_Sintony{
-    font-family: 'Sintony', sans-serif;
+@mixin font_Sintony {
+    font-family: "Sintony", sans-serif;
 }
 
-@mixin font_Source_Sans_Pro{
-    font-family: 'Source Sans Pro', sans-serif;
+@mixin font_Source_Sans_Pro {
+    font-family: "Source Sans Pro", sans-serif;
 }
 // === / Mixins ===
 
 // === Variables ===
 $color_white: #ffffff;
+$width_page: 1440px;
 // === / Variables ===
 
 // === Common ===
+* {
+    box-sizing: border-box;
+}
+
 body {
-    @include font_Sintony;
     @include font_Source_Sans_Pro;
 }
 // === / Common ===
 
-.back_ground{
+.back_ground {
+    color: $color_white;
+    background: linear-gradient(0deg, #6f86d6 0%, #48c6ef 100%);
+    background-size: cover;
+    position: relative;
+    height: 100vh;
+    z-index: 10;
+    &before {
+        content: "";
+        position: absolute;
+        z-index: 5;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
 
+        background-color: rgba(216, 216, 216, 1);
+    }
 
-
-        color: $color_white;
-        background: linear-gradient(0deg, #6F86D6 0%, #48C6EF 100%);
-        background-size: cover;
-        position: relative;
-        height: 100vh;
-        z-index: 10;
-        &before {
-
-            content: '';
-            position: absolute;
-            z-index: 5;
-            top: 0;
-            right: 0;
-            left: 0;
-            bottom: 0;
-
-            background-color:  rgba(216, 216, 216, 1);
-
-        }
-
-    
-    .container{
-
+    .container {
+        width: $width_page;
+        margin: 0 auto;
+        //padding: 0 auto;
+        //
         // === header ===
         .section_header {
             color: $color_white;
             position: relative;
-    
-            .section_inner{
-                //height: 100vh;
-                //position: relative;
-                display: flex;
-                //flex-direction: row;
-            }
-            
-            &_logo {
-                font-weight: normal;
-                font-size: 27px;
-                flex-shrink: 1;
-            }
-    
+            margin-bottom: 80px;
+            //margin: 0 auto;
+            padding: 0;
             &_menu {
                 flex-grow: 1;
+                //flex: 1;
                 display: flex;
+
                 align-items: center;
+                padding-top: 45px;
+                padding-left: 163px;
+                padding-right: 163px;
+                height: 52px;
+                width: 1114; //TODO: почему когда я запускаю в браузере section_heder_menu 1400px шириной? 
+
+                &_logo {
+                    display: flex;
+
+                    flex: 0.5; //TODO: нормально ставить флексу дробное значение?
+
+                    height: 34px;
+                    width: 134px;
+
+                    &_name { //TODO: не могу вытащить из фигмы картинку лого
+                        color: $color_white;
+                        @include font_Source_Sans_Pro;
+                        font-weight: 900;
+                        font-style: normal;
+                        font-size: 18px;
+                        line-height: 27px;
+                        text-align: right;
+                    }
+                }
+
+                &_wrapper {
+                    display: flex;
+                    flex: 1;
+                    padding-right: 55;
+
+                    @include font_Sintony;
+                    font-weight: normal;
+                    font-style: normal;
+                    font-size: 16px;
+                    line-height: 24px;
+                    text-align: center;
+
+                    //TODO: стрёмно мне от этой конструкции
+                    &__products,
+                    & __services,
+                    &__features,
+                    &__plans,
+                    &__sign_in {
+                        flex: 1;
+                    }
+                }
+                &_signup_button {
+                    //flex: 1;
+                    button {
+                        @include font_Source_Sans_Pro;
+                        color: $color_white;
+                        font-style: normal;
+                        font-weight: bold;
+                        font-size: 15px;
+                        line-height: 24px;
+                        /* identical to box height, or 160% */
+
+                        text-align: center;
+                        letter-spacing: 4.2px;
+                        text-transform: uppercase;
+
+                        border-radius: 26px;
+                        background-color: $color_white;
+                        border: none;
+                    }
+                }
             }
-    
-            &_wrapper {
-                display: flex;
-                font-size: 24px;
-                &__products{}
-                &__services{}
-                &__features{}
-                &__plans{}
-                &__sign_in{}
-                &__signup_button{}
-            }
-            
         }
         // === / header ===
-    
-        .section_Hero{
+
+        .section_Hero {
             color: $color_white;
             position: relative;
-    
-            &_wrapper{
+
+            &_wrapper {
                 display: flex;
                 flex-direction: column;
             }
-    
         }
     }
-    
 }
-
-
