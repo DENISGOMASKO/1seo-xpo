@@ -13,12 +13,15 @@
 
 // === Variables ===
 $color_white: #ffffff;
+$color_black: #000000;
 $width_page: 1114px;
 // === / Variables ===
 
 // === Common ===
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
@@ -26,183 +29,428 @@ body {
 }
 // === / Common ===
 
-.back_ground {
+//.back_ground{
+//    position: relative;
+//}
+
+.back_ground_header {
     color: $color_white;
     background: linear-gradient(0deg, #6f86d6 0%, #48c6ef 100%);
     background-size: cover;
-    position: relative;
-    height: 100vh;
-    z-index: 10;
-    margin: 0;
-    &before {
-        content: "";
-        position: absolute;
-        z-index: 5;
-        top: 0;
-        right: 0;
-        left: 0;
-        bottom: 0;
 
-        background-color: rgba(216, 216, 216, 1);
+    position: absolute;
+    width: 100vw;
+    height: 810px; 
+
+    top: 0px;
+    left: 0;
+    right: 0;
+    z-index: -1;
+
+    -webkit-mask-image: url("/img/bg/Mask.png");
+    mask-image: url("/img/bg/Mask.png");
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: top left;
+    mask-position: top left;
+    -webkit-mask-size: 100vw 810px;
+    mask-size: 100vw 810px;
+
+}
+.back_ground_path2 {
+    color: $color_white;
+    background: linear-gradient(0deg, rgba(221, 226, 255, 0.0001) 1.34%, #FFFFFF 75.76%);
+    background-size: cover;
+
+    position: absolute;
+    width: 100vw;
+    height: 1150px; 
+    top: 810px;
+    z-index: -3;
+}
+.back_ground_path3 {
+    color: $color_white;
+    background: linear-gradient(180deg, #ECE9FF 10%, rgba(255, 255, 255, 0.0001) 100%);
+
+    position: absolute;
+    width: 100vw;
+    height: 965px;
+ 
+    top: 1535px;
+    z-index: -2;
+
+    -webkit-mask-image: url("/img/bg/Path3.png");
+    mask-image: url("/img/bg/Path3.png");
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: top left;
+    mask-position: top left;
+    -webkit-mask-size: 100vw 965px;
+    mask-size: 100vw 965px;
+}
+.back_ground_path4 {
+    color: $color_white;
+    background: linear-gradient(0deg, rgba(188, 188, 188, 0.5) 1.34%, #FFFFFF 75.76%);
+    background-size: cover;
+
+    position: absolute;
+    width: 100vw;
+    height: 1150px;
+
+    top: 3057px;
+    z-index: -1;
+}
+.container {
+    max-width: $width_page;
+
+    margin: 0 auto;
+    padding: 0;
+    
+    // === header ===
+    .section_header {
+        color: $color_white;
+        margin-top: 45px;
     }
 
-    .container {
-        width: $width_page;
+    .section_header_menu {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 134px;
 
-        margin: 0 auto;
-        padding: 0;
-        //
-        // === header ===
-        .section_header {
-            color: $color_white;
-            position: relative;
+        width: 100%;
+        height: 52px;
 
-            &_menu {
-                display: flex;
-                align-items: center;
-                margin: 0 0 134px 0;
-                padding: 45px 0px 0px 0px;
+        &_logo {
+            display: flex;
 
+            width: 134px;
+            height: 34px;
+            //margin: 0 183px 0 0;
+            padding: 0;
+
+            &_img {
+                width: 24px;
+                height: 24px;
+                transform: rotate(-27deg);
+                margin-right: 17px;
+                padding: 0;
+            }
+
+            &_name {
+                color: $color_white;
+                @include font_Source_Sans_Pro;
+                font-weight: 900;
+                font-style: normal;
+                font-size: 18px;
+                line-height: 27px;
+                text-align: right;
+
+                margin: 0;
+                padding: 0;
+            }
+        }
+
+        &_wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            width: 797px;
+            height: 52px;
+
+            margin: 0;
+            //TODO: стрёмно мне от этой конструкции
+            &__products,
+            &__services,
+            &__features,
+            &__plans,
+            &__sign_in {
+                //flex: 1;
                 width: 100%;
-                height: 52px;
+                @include font_Sintony;
+                font-weight: normal;
+                font-style: normal;
+                font-size: 16px;
+                line-height: 24px;
+                text-align: center;
+            }
 
-                &_logo {
-                    display: flex;
+            &__signup_button {
+                button {
+                    //flex: 1;
+                    @include font_Source_Sans_Pro;
+                    color: $color_white;
+                    font-style: normal;
+                    font-weight: bold;
+                    font-size: 15px;
+                    line-height: 24px;
+                    /* identical to box height, or 160% */
 
-                    width: 134px;
-                    height: 34px;
-                    margin: 0 183px 0 0;
-                    padding: 0;
-                    &_img {
-                        width: 24px;
-                        height: 24px;
-                        transform: rotate(-27deg);
-                        margin-right: 17px;
-                        padding: 0;
-                    }
-                    &_name {
-                        //TODO: не могу вытащить из фигмы картинку лого
-                        color: $color_white;
-                        @include font_Source_Sans_Pro;
-                        font-weight: 900;
-                        font-style: normal;
-                        font-size: 18px;
-                        line-height: 27px;
-                        text-align: right;
+                    text-align: center;
+                    letter-spacing: 4.2px;
+                    text-transform: uppercase;
 
-                        margin: 0;
-                        padding: 0;
-                    }
-                }
+                    border-radius: 26px;
+                    background-color: $color_white;
+                    border: none;
 
-                &_wrapper {
-                    display: flex;
-                    align-items: center;
-
-                    width: 797px;
+                    width: 154px;
                     height: 52px;
-
-                    margin: 0;
-                    //TODO: стрёмно мне от этой конструкции
-                    &__products,
-                    &__services,
-                    &__features,
-                    &__plans,
-                    &__sign_in {
-                        //flex: 1;
-                        width: 100%;
-                        @include font_Sintony;
-                        font-weight: normal;
-                        font-style: normal;
-                        font-size: 16px;
-                        line-height: 24px;
-                        text-align: center;
-                    }
-
-                    &__signup_button {
-                        button {
-                            flex: 1;
-                            @include font_Source_Sans_Pro;
-                            color: $color_white;
-                            font-style: normal;
-                            font-weight: bold;
-                            font-size: 15px;
-                            line-height: 24px;
-                            /* identical to box height, or 160% */
-
-                            text-align: center;
-                            letter-spacing: 4.2px;
-                            text-transform: uppercase;
-
-                            border-radius: 26px;
-                            background-color: $color_white;
-                            border: none;
-
-                            width: 154px;
-                            height: 52px;
-                        }
-                    }
                 }
             }
         }
-        // === / header ===
+    }
 
-        .section_Hero {
-            color: $color_white;
-            position: relative;
+    // === / header ===
 
-            &_wrapper {
-                display: flex;
-                flex-direction: column;
-                margin-bottom: 124px;
-                &__title {
+    .section_Hero {
+        color: $color_white;
+        position: relative;
+
+        &_wrapper {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 124px;
+            &__title {
+                @include font_Source_Sans_Pro;
+                font-style: normal;
+                font-weight: 900;
+                font-size: 48px;
+                line-height: 56px;
+
+                max-width: 577px;
+
+                margin-bottom: 36px;
+                padding: 0 auto;
+            }
+            &__subtitle {
+                @include font_Sintony;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 18px;
+                line-height: 27px;
+
+                max-width: 380px;
+
+                margin-bottom: 40px;
+                padding: 0 auto;
+            }
+            &__more_button {
+                button {
                     @include font_Source_Sans_Pro;
+                    color: $color_white;
                     font-style: normal;
-                    font-weight: 900;
-                    font-size: 48px;
-                    line-height: 56px;
+                    font-weight: bold;
+                    font-size: 15px;
+                    line-height: 24px;
 
-                    width: 577px;
+                    text-align: center;
+                    letter-spacing: 4.2px;
+                    text-transform: uppercase;
 
-                    margin-bottom: 36px;
-                    padding: 0 auto;
+                    border-radius: 26px;
+                    background-color: $color_white;
+
+                    border: none;
+
+                    width: 154px;
+                    height: 52px;
                 }
-                &__subtitle {
-                    @include font_Sintony;
-                    font-style: normal;
-                    font-weight: normal;
-                    font-size: 18px;
-                    line-height: 27px;
+            }
+        }
+    }
+    .section_Metrics {
+        align-items: center;
+    }
+    .section_Metrics_wrapper {
+        color: $color_white;
+        display: flex;
+        justify-content: space-between;
+        &__one {
+            width: 30%;
+            height: 390px;
 
-                    width: 380px;
+            background: $color_white;
+            border: 1px solid #f2f2f2;
+            box-sizing: border-box;
+            box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.0236287);
+            border-radius: 19px;
 
-                    margin-bottom: 40px;
-                    padding: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+
+            &_icon {
+                width: 80px;
+                height: 80px;
+                background: linear-gradient(0deg, #6f86d6 0%, #48c6ef 100%);
+                border-radius: 40px;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                &_img {
+                    width: 40px;
+                    height: 40px;
                 }
-                &__more_button {
-                    button {
-                        @include font_Source_Sans_Pro;
-                        color: $color_white;
-                        font-style: normal;
-                        font-weight: bold;
-                        font-size: 15px;
-                        line-height: 24px;
-                        /* identical to box height, or 160% */
+            }
+            &_title {
+                @include font_Source_Sans_Pro;
+                color: $color_black;
 
-                        text-align: center;
-                        letter-spacing: 4.2px;
-                        text-transform: uppercase;
+                max-width: 125px;
+                height: 55px;
 
-                        //position: absolute;
-                        border-radius: 26px;
-                        background-color: $color_white;
+                font-style: normal;
+                font-weight: 900;
+                font-size: 18px;
+                line-height: 27px;
 
-                        border: none;
+                text-align: center;
+            }
 
-                        width: 154px;
-                        height: 52px;
-                    }
+            &_subtitle {
+                @include font_Sintony;
+                color: $color_black;
+
+                max-width: 270px;
+                height: 80px;
+
+                font-style: normal;
+                font-weight: normal;
+                font-size: 18px;
+                line-height: 27px;
+
+                text-align: center;
+                //flex: 0.5;
+            }
+        }
+
+        &__two {
+            width: 30%;
+            height: 390px;
+
+            background: $color_white;
+            border: 1px solid #f2f2f2;
+            box-sizing: border-box;
+            box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.0236287);
+            border-radius: 19px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+
+            &_icon {
+                width: 80px;
+                height: 80px;
+                background: linear-gradient(0deg, #6f86d6 0%, #48c6ef 100%);
+                border-radius: 40px;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                &_img {
+                    max-width: 40px;
+                    height: 40px;
                 }
+            }
+            &_title {
+                @include font_Source_Sans_Pro;
+                color: $color_black;
+
+                max-width: 160px;
+                height: 55px;
+
+                font-style: normal;
+                font-weight: 900;
+                font-size: 18px;
+                line-height: 27px;
+
+                text-align: center;
+            }
+
+            &_subtitle {
+                @include font_Sintony;
+                color: $color_black;
+
+                max-width: 270px;
+                height: 80px;
+
+                font-style: normal;
+                font-weight: normal;
+                font-size: 18px;
+                line-height: 27px;
+
+                text-align: center;
+                //flex: 0.5;
+            }
+        }
+
+        &__three {
+            width: 30%;
+            height: 390px;
+
+            background: $color_white;
+            border: 1px solid #f2f2f2;
+            box-sizing: border-box;
+            box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.0236287);
+            border-radius: 19px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+
+            &_icon {
+                width: 80px;
+                height: 80px;
+                background: linear-gradient(0deg, #6f86d6 0%, #48c6ef 100%);
+                border-radius: 40px;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                &_img {
+                    width: 40px;
+                    height: 40px;
+                }
+            }
+
+            &_title {
+                @include font_Source_Sans_Pro;
+                color: $color_black;
+
+                max-width: 160px;
+                height: 55px;
+
+                font-style: normal;
+                font-weight: 900;
+                font-size: 18px;
+                line-height: 27px;
+
+                text-align: center;
+            }
+
+            &_subtitle {
+                @include font_Sintony;
+                color: $color_black;
+
+                max-width: 270px;
+                height: 80px;
+
+                font-style: normal;
+                font-weight: normal;
+                font-size: 18px;
+                line-height: 27px;
+
+                text-align: center;
+                //flex: 0.5;
             }
         }
     }
