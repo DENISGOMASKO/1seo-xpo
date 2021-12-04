@@ -775,14 +775,15 @@ body {
             top: 186px;
             border-radius: 40px;
             background: linear-gradient(0deg, #6f86d6 0%, #48c6ef 100%);
+            
+            display: flex;
+            align-items: center;
             justify-content: center;
-            //align-items: center;
+
             &_img {
                 width: 22px;
                 height: 22px;
 
-                margin-top: 26px;
-                margin-left: 26px;
             }
         }
     }
@@ -800,11 +801,15 @@ body {
             width: 80px;
             border-radius: 40px;
             background: linear-gradient(0deg, #6f86d6 0%, #48c6ef 100%);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
             &_image {
                 width: 40px;
                 height: 40px;
-                margin-top: 20px;
-                margin-left: 20px;
+
             }
         }
         &_title {
@@ -1156,14 +1161,25 @@ body {
             mask-size: 31px 31px;
         }
     }
-    &_third_Graph_box1{
+
+    //+==============================================
+    &_third{
         position: relative;
+        width: 100%;
+        height: 350px;
+    }
+
+
+    &_third_Graph_box1{
+        position: absolute;
         background: #FFFFFF;
         border: 1px solid #EDEDED;
         box-sizing: border-box;
         box-shadow: 0px 12px 24px rgba(221, 221, 221, 0.0001);
         border-radius: 19px;
-        max-width: 480px;
+
+        //max-width: 480px;
+        width: 40%;
         height: 340px;
         display: flex;
 
@@ -1184,18 +1200,21 @@ body {
             border-radius: 8px;
             width: 100%;
             height: 10px;
+            opacity: 0.21;
         }
         &_assets2{
             background: #B5B5B5;
             border-radius: 8px;
             width: 100%;
             height: 10px;
+            opacity: 0.21;
         }
         &_assets3{
             background: #B5B5B5;
             border-radius: 8px;
             width: 100%;
             height: 10px;
+            opacity: 0.21;
         }
 
     }
@@ -1212,19 +1231,84 @@ body {
             border-radius: 8px;
             width: 100%;
             height: 10px;
+            opacity: 0.21;
         }
         &_assets2{
             background: #B5B5B5;
             border-radius: 8px;
             width: 100%;
             height: 10px;
+            opacity: 0.21;
         }
         &_assets3{
             background: #B5B5B5;
             border-radius: 8px;
             width: 100%;
             height: 10px;
+            opacity: 0.21;
         }
+    }
+
+    &_third_Graph{
+        position: absolute;
+        width: 100%;
+        height: auto;
+        &_madnify{
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            top: 190px;
+            left: 15%;
+            
+            
+            
+            background: linear-gradient(0deg, #6F86D6 0%, #48C6EF 100%);
+            border-radius: 40px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &_img{
+                width: 24px;
+                height: 24px;
+                
+                
+            }
+            
+        }
+
+        &_circle1{
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(0deg, #6F86D6 0%, #48C6EF 100%);
+            border-radius: 40px;
+
+            left: -4%;
+            top: 300px;
+
+        }
+        &_circle2{
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(0deg, #6F86D6 0%, #48C6EF 100%);
+            border-radius: 40px;
+            left: 30%;
+            top: 352px;         
+        }
+        &_circle3{
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: linear-gradient(0deg, #6F86D6 0%, #48C6EF 100%);
+            border-radius: 40px;
+            left: 42%;
+            
+            top: 20px;
+        }
+
     }
 
 }
