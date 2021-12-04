@@ -622,7 +622,7 @@ body {
             width: 90%;
             height: 12px;
 
-            background: linear-gradient(0deg, #6F86D6 0%, #48C6EF 100%);
+            background: linear-gradient(0deg, #6f86d6 0%, #48c6ef 100%);
             border-radius: 8px;
         }
     }
@@ -718,7 +718,7 @@ body {
             left: 25%;
             top: 165px;
 
-            background: linear-gradient(0deg, #6F86D6 0%, #48C6EF 100%);
+            background: linear-gradient(0deg, #6f86d6 0%, #48c6ef 100%);
 
             -webkit-mask-image: url("/img/icon/right.svg");
             mask-image: url("/img/icon/right.svg");
@@ -738,7 +738,7 @@ body {
             top: 130px;
 
             transform: matrix(1, 0, 0, -1, 0, 0);
-            background: linear-gradient(0deg, #6F86D6 0%, #48C6EF 100%);
+            background: linear-gradient(0deg, #6f86d6 0%, #48c6ef 100%);
 
             -webkit-mask-image: url("/img/icon/right.svg");
             mask-image: url("/img/icon/right.svg");
@@ -755,7 +755,7 @@ body {
             height: 20px;
             left: 30%;
             top: 0px;
-            background: linear-gradient(0deg, #6F86D6 0%, #48C6EF 100%);
+            background: linear-gradient(0deg, #6f86d6 0%, #48c6ef 100%);
             border-radius: 40px;
         }
         &_circle2 {
@@ -764,7 +764,7 @@ body {
             height: 20px;
             left: 7%;
             top: 147px;
-            background: linear-gradient(0deg, #6F86D6 0%, #48C6EF 100%);
+            background: linear-gradient(0deg, #6f86d6 0%, #48c6ef 100%);
             border-radius: 40px;
         }
         &_glass {
@@ -774,7 +774,7 @@ body {
             left: 28%;
             top: 186px;
             border-radius: 40px;
-            background: linear-gradient(0deg, #6F86D6 0%, #48C6EF 100%);
+            background: linear-gradient(0deg, #6f86d6 0%, #48c6ef 100%);
             justify-content: center;
             //align-items: center;
             &_img {
@@ -799,7 +799,7 @@ body {
             height: 80px;
             width: 80px;
             border-radius: 40px;
-            background: linear-gradient(0deg, #6F86D6 0%, #48C6EF 100%);
+            background: linear-gradient(0deg, #6f86d6 0%, #48c6ef 100%);
             &_image {
                 width: 40px;
                 height: 40px;
@@ -833,8 +833,8 @@ body {
         }
     }
 
-    // ==========================================================================================
-    &_second{
+    // =========================================================================================================================================
+    &_second {
         position: relative;
         width: 100%;
         height: 300px;
@@ -843,19 +843,87 @@ body {
         justify-content: space-between;
         margin-bottom: 280px;
     }
-    &_second_date{
+    &_second_date {
         position: relative;
         display: flex;
         flex-direction: column;
         width: auto;
         justify-content: space-evenly;
+
+        &_icon{
+            
+            height: 80px;
+            width: 80px;
+            background: linear-gradient(0deg, #6F86D6 0%, #48C6EF 100%);
+            border-radius: 40px;
+       
+            position: relative;
+            
+            &_image{
+                position: absolute;
+                width: 40px;
+                height: 40px;
+
+                left: 25%;
+                top: 25%;
+                margin: auto;
+                transform: rotate(-22deg);
+            }
+        }
+
+        &_title{
+            @include font_Source_Sans_Pro;
+            font-style: normal;
+            font-weight: 900;
+            font-size: 28px;
+            line-height: 36px;
+
+            max-width: 380px;
+        }
+        &_subtitle{
+            @include font_Sintony;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: 27px;
+
+            max-width: 290px;
+        }
     }
 
-    &_second_Graph{
+    &_second_Graph {
         position: relative;
         width: 40%;
         height: 100%;
         margin: 0;
+
+        &_circle1{
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 40px;
+            background: linear-gradient(0deg, #6F86D6 0%, #48C6EF 100%);
+            top: 150px;
+            left: 7%;
+        }
+        &_circle2{
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 40px;
+            background: linear-gradient(0deg, #6F86D6 0%, #48C6EF 100%);
+            top: 0px;
+            left: 33%;
+        }
+        &_circle3{
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 20px;
+            background: linear-gradient(0deg, #6F86D6 0%, #48C6EF 100%);
+            top: 250px;
+            left: 96%;
+        }
     }
 
     &_second_Graph_box1 {
@@ -934,17 +1002,81 @@ body {
     }
     //============================ box2
     &_second_Graph_box2 {
-        position: absolute;
+        position: relative;
         height: 313px;
-        width: 265px;
+        width: 60%;
         left: calc(30% + 20px);
         top: 0px;
         border-radius: 10px;
         background: $color_white;
-        border: 1px solid #F2F2F2;
+        border: 1px solid #f2f2f2;
         box-sizing: border-box;
-        box-shadow: 0px 12px 24px rgba(221, 221, 221, 0.0001);
+        box-shadow: -5px 10px 24px rgba(221, 221, 221, 0.5);
         border-radius: 10px;
+
+        &_flexbox{
+            position: absolute;
+            width: 90%;
+            height: 90%;
+            margin: auto;
+            top: 5%;
+            left: 5%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        &_image{
+            max-width: 227px;
+            max-height: 227px;
+            width: 100%;
+            height: 100%;
+            margin: auto;
+            background: linear-gradient(0deg, #6F86D6 0%, #48C6EF 100%);
+
+            -webkit-mask-image: url("/img/icon/image.svg");
+            mask-image: url("/img/icon/image.svg");
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+            -webkit-mask-position: top left;
+            mask-position: top left;
+            -webkit-mask-size: 100% 100%;
+            mask-size: 100% 100%;
+        }
+
+        &_assets_wrapper{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        &_heart{
+            width: 24px;
+            height: 24px;
+            background: linear-gradient(0deg, #6F86D6 0%, #48C6EF 100%);
+
+            -webkit-mask-image: url("/img/icon/heart.svg");
+            mask-image: url("/img/icon/heart.svg");
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+            -webkit-mask-position: top left;
+            mask-position: top left;
+            -webkit-mask-size: 100% 100%;
+            mask-size: 100% 100%;
+        }
+        &_comment{
+            width: 24px;
+            height: 24px;
+            background: linear-gradient(0deg, #6F86D6 0%, #48C6EF 100%);
+
+            -webkit-mask-image: url("/img/icon/comment.svg");
+            mask-image: url("/img/icon/comment.svg");
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+            -webkit-mask-position: top left;
+            mask-position: top left;
+            -webkit-mask-size: 100% 100%;
+            mask-size: 100% 100%;
+        }
     }
 
     //============================ box3
@@ -1024,52 +1156,76 @@ body {
             mask-size: 31px 31px;
         }
     }
-
-}
-
-/*.section_Service_list_second_date {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    width: auto;
-    justify-content: space-evenly;
-
-    &_icon {
+    &_third_Graph_box1{
         position: relative;
-        height: 80px;
-        width: 80px;
-        border-radius: 40px;
-        background: linear-gradient(0deg, #6F86D6 0%, #48C6EF 100%);
-        &_image {
-            width: 40px;
-            height: 40px;
-            margin-top: 20px;
-            margin-left: 20px;
+        background: #FFFFFF;
+        border: 1px solid #EDEDED;
+        box-sizing: border-box;
+        box-shadow: 0px 12px 24px rgba(221, 221, 221, 0.0001);
+        border-radius: 19px;
+        max-width: 480px;
+        height: 340px;
+        display: flex;
+
+        justify-content: space-around;
+
+    }
+    &_third_Graph_sub1box1{
+        height: 60px;
+
+        width: 55%;
+        margin: 0;
+        margin-top: 170px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        &_assets1{
+            background: #B5B5B5;
+            border-radius: 8px;
+            width: 100%;
+            height: 10px;
+        }
+        &_assets2{
+            background: #B5B5B5;
+            border-radius: 8px;
+            width: 100%;
+            height: 10px;
+        }
+        &_assets3{
+            background: #B5B5B5;
+            border-radius: 8px;
+            width: 100%;
+            height: 10px;
+        }
+
+    }
+    &_third_Graph_sub2box1{
+        height: 60px;
+        width: 30%;
+        margin: 0;
+        margin-top: 170px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        &_assets1{
+            background: #B5B5B5;
+            border-radius: 8px;
+            width: 100%;
+            height: 10px;
+        }
+        &_assets2{
+            background: #B5B5B5;
+            border-radius: 8px;
+            width: 100%;
+            height: 10px;
+        }
+        &_assets3{
+            background: #B5B5B5;
+            border-radius: 8px;
+            width: 100%;
+            height: 10px;
         }
     }
-    &_title {
-        @include font_Source_Sans_Pro;
-        font-size: 28px;
-        font-style: normal;
-        font-weight: 900;
-        line-height: 36px;
-        letter-spacing: 0px;
-        text-align: left;
 
-        max-width: 380px;
-        height: auto;
-    }
-    &_subtitle {
-        @include font_Sintony;
-        font-size: 18px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 27px;
-        letter-spacing: 0px;
-        text-align: left;
-
-        max-width: 290px;
-        height: auto;
-    }
 }
-*/
+
